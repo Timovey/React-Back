@@ -6,7 +6,20 @@ export default (state, action) => {
                 isAuth: true,
                 userName: action.payload.userName,
                 roomId: action.payload.roomId
-            }
+            };
+        case "SET_USERS":
+            return {
+                ...state,
+                isAuth: true,
+                users: action.payload,
+
+            };
+        case "NEW_MESSAGE":
+            return {
+                ...state,
+                messages: [...state.messages, action.payload],
+
+            };
         default:
             return state;
     }

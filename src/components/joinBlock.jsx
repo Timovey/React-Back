@@ -24,7 +24,7 @@ function JoinBlock({onLogin}) {
     }
     return (<div className="main">
         <div className="wrap">
-            <input type="text" className="input__text" placeholder="ID room" value={roomId} onChange={(e) => setRoomId(e.target.value)}/>
+            <input type="text" className="input__text input__text_first" placeholder="ID room" value={roomId} onChange={(e) => setRoomId(e.target.value)}/>
             <input type="text" className="input__text" placeholder="Имя" value={userName} onChange={(e) => setUserName(e.target.value)}/>
             <button disabled={isLoading} className="btn__enter" onClick={onEnter}>
                 {isLoading ? "ВХОД..." : "Войти"}

@@ -6,10 +6,16 @@
   margin: 0;
   padding: 0;
 }
+h2 {
+  margin: 5% 7% 5% 7%;
+  font-size: 24px;
+}
 h3 {
   margin: 7%;
 }
-
+li {
+  list-style-type: none
+}
 input button {
   outline: none;
   cursor: none;
@@ -29,6 +35,7 @@ form {
   margin-bottom: 10px;
   padding: 10px;
 }
+
 .main {
 display: flex;
 justify-content: center;
@@ -41,21 +48,30 @@ justify-content: center;
   align-items: center;
 }
 .input__text {
+  margin: 10px;
   padding: 10px;
   border: solid 2px rgb(10,10,10);
+  border-radius: 4px; 
   appearance: none;
   text-indent: 10px;
+}
+.input__text_first {
+  margin-top: 30vh;
 }
 .btn__enter {
   margin: center;
   display: block;
-  background-color: #fff;
-  padding: 10px 15px 10px 15px;
+  background-color: rgba(31, 160, 70, 90%);
+  margin: 10px;
+  border-radius: 4px;
+  border: 2px solid rgba(10,10,10, 60%);
+  padding: 10px 15px 0px 15px;
 }
 
 /* chat section */
+
 .chat__wrap {
-  margin: 10vh 30px;
+  margin: 10vh 30px 0 30px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -83,7 +99,7 @@ justify-content: center;
   height: 20px;
   background-color: #fff;
   margin: 5%;
-  padding: 5% 5% 10% 5%;
+  padding: 3% 3% 5% 3%;
   border-radius: 4px;
   border: 2px solid rgba(10,100,10, 60%);
 }
@@ -93,19 +109,27 @@ justify-content: center;
   align-items: flex-end;
 }
 .message {
+  margin-right: 2%;
+  margin-top: 1%;
+}
+.message > p {
   display: inline-block;
   background-color: #fff;
-  margin: 5% 2%;
+  margin: 3% 2% 0 2%;
   border-radius: 4px;
   border: 2px solid rgba(10,100,10, 60%);
   text-align: right;
-  padding: 10px 10px 0 10px;
-  width: auto;
+  padding: 10px 10px 0 10px;  
+}
+.message > div {
+  font-size: 15px;
+  color: rgba(0, 0, 100, 60%);
+  margin-left: 7px;
 }
 .btn__chat_enter {
   background-color: rgba(31, 160, 70, 90%);
   margin: 0 5% ;
   border-radius: 4px;
-  padding: 2% 2% 0 2%;
+  padding: 1% 2% 0 2%;
   border: 2px solid rgba(10,10,10, 60%);
 }
