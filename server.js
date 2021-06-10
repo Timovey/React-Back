@@ -19,9 +19,25 @@ app.get('/rooms', (req, res) => {
 });
 
 app.post('/rooms', (req, res) => {
-
+	//console.log(req.body);
+	const {roomId, userName} = req.body;
+	if(!rooms.has(roomId)) {
+		rooms.set(roomId, new Map([
+			['users', new Map()],
+			['massages', []]
+		]
+		))
+	}
+	res.send();
 });
 io.on('connection', (socket) => {
+	socket.on('ROOM:JOIN', ({roomId, userName}) => {
+		//console.log(data);
+		socket.join(roomId);
+		rooms.get(roomId).get('users').set(socket.id, userName);
+		const users = [...rooms.get(roomId).get('users').values()];
+		socket.broadcast.to(roomId).emit('ROOM:JOINED', users);
+	})
     console.log('user connect ', socket.id);
 });
 
